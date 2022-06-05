@@ -26,6 +26,7 @@ const styles = {
     justifyContent: "flex-start",
     margin: "0 auto",
     maxWidth: "1000px",
+    paddingLeft: "105px",
     gap: "10px",
   },
   banner: {
@@ -35,22 +36,24 @@ const styles = {
     margin: "0 auto",
     width: "600px",
     //borderRadius: "10px",
-    height: "150px",
+    height: "100px",
     marginBottom: "40px",
     paddingBottom: "20px",
     borderBottom: "solid 1px #e3e3e3",
+  
   },
   logo: {
     height: "115px",
-    width: "115px",
+    width: "150px",
     borderRadius: "50%",
     // positon: "relative",
     // marginTop: "-80px",
     border: "solid 4px white",
+    
   },
   text: {
     color: "#041836",
-    fontSize: "27px",
+    fontSize: "22px",
     fontWeight: "bold",
   },
 };
@@ -223,7 +226,7 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               <Card
                 hoverable
                 actions={[
-                  <Tooltip title="View Collection">
+                  <Tooltip title="View Collection" height="20px" weight="20px">
                     <RightCircleOutlined
                       onClick={() => setInputValue(nft?.addrs)}
                     />
@@ -250,11 +253,11 @@ function NFTTokenIds({ inputValue, setInputValue }) {
               <Card
                 hoverable
                 actions={[
-                  <Tooltip title="View On Blockexplorer">
+                  <Tooltip title="Check details on aunseco.com">
                     <FileSearchOutlined
                       onClick={() =>
                         window.open(
-                          `${getExplorer(chainId)}address/${nft.token_address}`,
+                          `https://aunseco.com/auns-nfts`,
                           "_blank"
                         )
                       }

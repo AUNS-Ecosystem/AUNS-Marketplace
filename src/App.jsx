@@ -10,6 +10,7 @@ import {
 import Account from "components/Account";
 import Chains from "components/Chains";
 import NFTBalance from "components/NFTBalance";
+import CreateNFT from "components/CreateNFT";
 import NFTTokenIds from "components/NFTTokenIds";
 import { Menu, Layout} from "antd";
 import SearchCollections from "components/SearchCollections";
@@ -25,7 +26,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     fontFamily: "Roboto, sans-serif",
-    color: "#041836",
+    color: "#e9e9e9",
     marginTop: "130px",
     padding: "10px",
   },
@@ -33,7 +34,7 @@ const styles = {
     position: "fixed",
     zIndex: 1,
     width: "100%",
-    background: "#fff",
+    background: "#e9e9e9",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -45,8 +46,9 @@ const styles = {
   headerRight: {
     display: "flex",
     gap: "20px",
+    background: "#e9e9e9",
     alignItems: "center",
-    fontSize: "15px",
+    fontSize: "13px",
     fontWeight: "600",
   },
 };
@@ -67,25 +69,29 @@ const App = ({ isServerInfo }) => {
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
         <Header style={styles.header}>
-          <Logo />
+          
           <SearchCollections setInputValue={setInputValue}/>
           <Menu
             theme="light"
             mode="horizontal"
             style={{
               display: "flex",
-              fontSize: "17px",
+              background:"#e9e9e9",
+              fontSize: "14px",
               fontWeight: "500",
-              marginLeft: "50px",
+              marginLeft: "10px",
               width: "100%",
             }}
             defaultSelectedKeys={["nftMarket"]}
           >
             <Menu.Item key="nftMarket" onClick={() => setInputValue("explore")} >
-              <NavLink to="/NFTMarketPlace">🛒 Explore Market</NavLink>
+              <NavLink to="/NFTMarketPlace">🛒 Browse</NavLink>
             </Menu.Item>
             <Menu.Item key="nft">
-              <NavLink to="/nftBalance">🖼 Your Collection</NavLink>
+              <NavLink to="/nftBalance">🖼 Your NFTs</NavLink>
+            </Menu.Item>
+            <Menu.Item key="CreateNFT" onClick={() => setInputValue("explore")} >
+              <NavLink to="/CreateNFT" >🚀 Create NFTs</NavLink>
             </Menu.Item>
             <Menu.Item key="transactions">
               <NavLink to="/Transactions">📑 Your Transactions</NavLink>
@@ -108,42 +114,76 @@ const App = ({ isServerInfo }) => {
             <Route path="/Transactions">
               <NFTMarketTransactions />
             </Route>
+            <Route path="/CreateNFT">
+              <CreateNFT />
+            </Route>
           </Switch>
           <Redirect to="/NFTMarketPlace" />
         </div>
       </Router>
-      <Footer style={{ textAlign: "center" }}>
-        <Text style={{ display: "block" }}>
-          ⭐️ Please star this{" "}
+      <Footer style={{ textAlign: "center", background: "#bac6d9" }}>
+        <Text style={{ display: "block", color: "grey" }}>
+          ⚠️ Purchasing volatile assets like crypto & NFTs can cause major
+          financial loss. Please read our{" "}
           <a
-            href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
+            href="https://aunseco.com/whitepaper/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            boilerplate
-          </a>
-          , every star makes us very happy!
-        </Text>
-
-        <Text style={{ display: "block" }}>
-          🙋 You have questions? Ask them on the {""}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29"
-          >
-            Moralis forum
+            whitepaper before investing!
           </a>
         </Text>
 
-        <Text style={{ display: "block" }}>
-          📖 Read more about{" "}
+        <Text style={{ display: "block", color: "grey" }}>
+          ❓ You have questions? Check out our {""}
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://moralis.io?utm_source=boilerplatehosted&utm_medium=todo&utm_campaign=ethereum-boilerplat"
+            href="https://aunseco.com/faq"
           >
-            Moralis
+            FAQ page.
+          </a>
+        </Text>
+
+        <Text style={{ display: "block", color: "grey" }}>
+          👍 Give us a like and follow us on our Social Media Channels: {""}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/AUNSEcosystem/"
+          >
+            Facebook -
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/auns_eco"
+          >
+            Twitter -
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/aunsecosystem/"
+          >
+            Instagram -
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.reddit.com/r/AUNS/"
+          >
+            Reddit.
+          </a>
+        </Text>
+        <Text style={{ display: "block", color: "grey" }}>
+          🎮 Stay up to date by joining our {""}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://discord.gg/decfcqF5bT"
+          >
+            Discord.
           </a>
         </Text>
       </Footer>

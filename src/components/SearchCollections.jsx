@@ -18,8 +18,8 @@ function SearchCollections({setInputValue}){
         <>
         <Select
             showSearch
-            style={{width: "1000px",
-                    marginLeft: "20px" }}
+            style={{width: "110px",
+                    marginLeft: "1px" }}
             placeholder="Find a Collection"
             optionFilterProp="children"
             onChange={onChange}

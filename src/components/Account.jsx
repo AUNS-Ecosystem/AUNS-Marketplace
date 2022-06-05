@@ -33,9 +33,9 @@ function Account() {
     return (
       <div
         style={styles.account}
-        onClick={() => authenticate({ signingMessage: "Hello World!" })}
+        onClick={() => authenticate({ signingMessage: "Welcome to AUNSeco.com!" })}
       >
-        <p style={styles.text}>Authenticate</p>
+        <p style={styles.text}>Login</p>
       </div>
     );
   }

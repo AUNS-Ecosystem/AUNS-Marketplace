@@ -8,7 +8,7 @@ import moment from "moment";
 const styles = {
   table: {
     margin: "0 auto",
-    width: "1000px",
+    width: "100%",
   },
 };
 
